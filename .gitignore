@@ -1,5 +1,8 @@
 # Built application files
 build/
+*.apk
+*.ap_
+*.aab
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -29,6 +32,12 @@ local.properties
 captures/
 
 # Keystore files
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+lint/reports/
+
 # Uncomment the following lines if you do not want to check your keystore files in.
 *.jks
 *.keystore
