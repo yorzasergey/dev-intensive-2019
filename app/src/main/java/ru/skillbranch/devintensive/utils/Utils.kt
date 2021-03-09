@@ -31,7 +31,7 @@ object Utils {
 
         val latinList = listOf("a", "b", "v", "g", "d", "e", "e", "zh", "z", "i", "i", "k", "l", "m",
             "n", "o", "p", "r", "s", "t", "u", "f", "h", "c", "ch", "sh", "sh'", "", "i", "",
-            "e", "yu", "ya",)
+            "e", "yu", "ya")
 
         val stringBuilder = StringBuilder()
         payload.forEach { item ->
