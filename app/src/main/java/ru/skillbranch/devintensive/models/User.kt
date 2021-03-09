@@ -13,12 +13,11 @@ data class User(
     var lastVisit: Date? = Date(),
     var isOnline: Boolean = false
 ) {
-
-    constructor(id: String, firstName: String?, lastName: String?) : this(
+    constructor(id: String, firstName: String?, lastName: String?): this(
         id = id,
         firstName = firstName,
         lastName = lastName,
-        null,
+        avatar = null
     )
 
     private constructor(builder: Builder): this(

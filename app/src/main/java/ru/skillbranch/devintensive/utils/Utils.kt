@@ -31,7 +31,23 @@ object Utils {
 
         val latinList = listOf("a", "b", "v", "g", "d", "e", "e", "zh", "z", "i", "i", "k", "l", "m",
             "n", "o", "p", "r", "s", "t", "u", "f", "h", "c", "ch", "sh", "sh'", "", "i", "",
-            "e", "yu", "ya",)
+            "e", "yu", "ya")
+
+        val capitalize: (String) -> String = { notCapitalize ->
+            var capitalizeString = notCapitalize
+            if (notCapitalize.isNotEmpty()) {
+                val firstChar = notCapitalize[0]
+                if (firstChar.isLowerCase()) {
+                    capitalizeString = buildString {
+                        append(firstChar.toUpperCase())
+                        if(notCapitalize.length > 1){
+                            append(notCapitalize.substring(1 until notCapitalize.length))
+                        }
+                    }
+                }
+            }
+            capitalizeString
+        }
 
         val stringBuilder = StringBuilder()
         payload.forEach { item ->
@@ -43,7 +59,7 @@ object Utils {
                 iterator++
             }
             if(index != -1){
-                stringBuilder.append(if(iterator == 1) latinList[index] else latinList[index].capitalize(Locale.ROOT))
+                stringBuilder.append(if(iterator == 1) latinList[index] else capitalize(latinList[index]))
             } else {
                 stringBuilder.append(item)
             }
